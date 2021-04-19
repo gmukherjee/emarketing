@@ -3,11 +3,9 @@
 Codes for SCORN R package. 
 Reproduces the results in the paper _Estimating Promotion Effects in Email Marketing using a Large-scale Cross-Classified Bayesian Joint Model for Nested Imbalanced Data_
 
-
-########################################################################
+-----------------------------------------------------
 Description of Codes for NCG, NCL, and CRON models
-Available in subfolder: codes-and-results
-########################################################################
+-----------------------------------------------------
 
 MODELNAME_learning.r:
 This code produces MCMC simulations for fixed and random effects coefficients and for their variances.
@@ -33,7 +31,7 @@ This code creates the probability predictions from the test data for each stage 
 	- locations of sub-sampling for the purchase stage locations_subsampling_purchase.csv
 	- expanded form of the test data predict_log.csv
 	- output from the learning code MODELNAME_learning_output.txt
-# it creates the test prediction for each of the three stages and stores them in MODELNAME_test_pred.txt.
+* it creates the test prediction for each of the three stages and stores them in MODELNAME_test_pred.txt.
 
 MODELNAME_training_pred.r
 This code creates the probability predictions from the training data for each stage of conversion (namely, open, click, and purchase).
@@ -42,11 +40,11 @@ This code creates the probability predictions from the training data for each st
 	- starting values of coefficients of each stage (initial_coeff_MODELNAME_stagename.xlsx) of the focal model
 	- locations of sub-sampling for the purchase stage locations_subsampling_purchase.csv
 	- output from the learning code MODELNAME_learning_output.txt
-# it creates the probability predictions on the training data for each of the three stages and stores them in MODELNAME_training_pred.txt.
+* it creates the probability predictions on the training data for each of the three stages and stores them in MODELNAME_training_pred.txt.
 
-#####################################
+-----------------------------------------
 Codes specific to SCRON models:
-#####################################
+-----------------------------------------
 
 SCRON_learning_partA.r
 This code implements the spike and slab.
@@ -68,9 +66,9 @@ Following the above two codes, SCRON model uses the following codes, the descrip
 	* SCRON_test_pred.r
 	* SCRON_training_pred.r
 
-#####################################
+-------------------------------------------
 AUC_all_models.r
-#####################################
+-------------------------------------------
 This code is respnsible for creating the AUC values.
 *It takes the following input files: 
 	- training_data.txt
@@ -81,9 +79,9 @@ This code is respnsible for creating the AUC values.
 	- stage type: open or click or purchase
 * Depending on stage type and datatype (test/training), it creates overall AUC for the focal stage e.g. AUC_purchase_training.txt as well hit rate for different ranges of false rates e.g. NCG_model_training_roc_purchase.txt
 
-#####################################
+------------------------------------------------
 ROC_NCG-NCL-CRON.r
-#####################################
+------------------------------------------------
 This code is responsible for creating the ROC curves for each stage and data type for the models NCG, NCL, and CRON.
 * It takes the following input files: 
 	- training_data.txt
@@ -99,9 +97,9 @@ This code is responsible for creating the ROC curves for each stage and data typ
 	- stage type: open or click or purchase
 * Depeding on stage type and datatype (test/training), it creates ROC Curves comparing NCG, NCL and CRON e.g. ROC_compare_purchase_training_NCG-NCL-CRON.pdf
 
-#####################################
+---------------------------------------------
 ROC_CRON-SCRON.r
-#####################################
+---------------------------------------------
 This code is responsible for creating the ROC curves for each stage and data type for the models CRON and SCRON.
 * It takes the following input files:
 	- training_data.txt
@@ -112,17 +110,17 @@ This code is responsible for creating the ROC curves for each stage and data typ
 	- SCRON_training_pred.txt
 * Depeding on stage type and datatype (test/training), it creates ROC Curves comparing CRON and SCRON e.g. ROC_compare_purchase_training_CRON-SCRON.pdf
 
-
-#####################################
+----------------------------------------------
 Generate_Summ_Stats.r
-#####################################
+----------------------------------------------
 This code is responsible for creating the summary statistics mentioned in the paper, namely, Table S1, Table S2, Table S3, Figure S1.
 * Input files required are:
 	- EmailCampaign_MainData.csv
 	- EmailSumm_Proj.csv
-#######################################
+
+----------------------------------------------
 Description of all the sub-routines used above
-#######################################
+----------------------------------------------
 
 joint_subroutine_random_mod.r
 This subroutine contains updated versions of calculation of MCMC steps, a modified version of set of codes in joint_subroutine_random.r. It is used to run learning and prediction codes of all four models.
@@ -138,9 +136,10 @@ This subroutine contains codes for running MCMC steps of the learning and predic
 
 check_random_new2_code.r 
 This subroutine contains codes for updating gamma (random components). Can be avoided in this application.
-#####################################
+
+-------------------------------------------
 Results and Intermediate Outcomes
-#####################################
+-------------------------------------------
 
 A)	locations_subsampling_purchase.csv:
 This data stores the sub-sampling locations to be used in the purchase stage.
