@@ -22,7 +22,7 @@ Given below is the data dictionary for the above data:
 	* daysSinceOpened - days since the last time the customer opened an email
 	* daysSinceClicked - days since the last time the customer clicked on an email
 	* daysSincePurchased - days since the last time the customer purchased from an email
-	* ID - Email Promo ID (25 options). The true ID is masked. The serial ID could be learned by merging with EmailSumm_Proj.csv.
+	* ID - Email Promo ID (25 options). The true ID is masked. The serial ID could be learned by merging with EmailSumm_Proj.csv. Since they are used as factors in the models, in the code they are represented as facID.
 	* Type - Customer Type (3 levels)
 
 
