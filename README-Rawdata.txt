@@ -2,6 +2,9 @@
 Description of Raw Data:
 #####################################
 
+We are unable to publicly share the data as it is propreitary. Below we present the format of the data. Wreetobrata Kar (wkar@purdue.edu) can be contacted for data related questions.
+
+
 EmailCampaign_MainData.csv: 
 This is the main data which has 1.62M observations.
 These observations were created by cataloging responses (open, click, purchase) to 25 promotion emails sent to one or more of 77986 customers. 
